@@ -1,0 +1,143 @@
+backend:
+  name: git-gateway
+  branch: main # or master, depending on your repository
+
+# Enable Netlify's Identity widget for authentication
+publish_mode: editorial_workflow
+
+# Media files configuration
+media_folder: "static/img" # Folder where uploaded media will be stored
+public_folder: "/img" # Path in the URL structure
+
+# Site configuration
+site_url: https://nafsiya.netlify.app
+display_url: https://nafsiya.netlify.app
+logo_url: https://nafsiya.netlify.app/img/Nafsiya-Wellbeing-Clinic-Logo-colour.svg
+
+collections:
+  # Homepage
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Draft", name: "draft", widget: "boolean", default: false}
+          - {label: "Homepage Intro Heading", name: "homepage_intro_heading", widget: "text"}
+          - {label: "Homepage Intro Text", name: "homepage_intro", widget: "text"}
+          - {label: "Left Box Heading", name: "left_box_heading", widget: "text"}
+          - {label: "Left Box Text", name: "left_box_text", widget: "text"}
+          - {label: "Left Box Button Text", name: "left_box_button_text", widget: "string"}
+          - {label: "Left Box Button Link", name: "left_box_button_link", widget: "string"}
+          - {label: "Right Box Heading", name: "right_box_heading", widget: "text"}
+          - {label: "Right Box Text", name: "right_box_text", widget: "text"}
+          - {label: "Right Box Button Text", name: "right_box_button_text", widget: "string"}
+          - {label: "Right Box Button Link", name: "right_box_button_link", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+
+  # About Page
+  - name: "about"
+    label: "About Page"
+    files:
+      - name: "about"
+        label: "About"
+        file: "content/about/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Type", name: "type", widget: "string", default: "about"}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Draft", name: "draft", widget: "boolean", default: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+  # Services Page
+  - name: "services"
+    label: "Services Page"
+    files:
+      - name: "services"
+        label: "Services"
+        file: "content/services/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Type", name: "type", widget: "string", default: "services"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Draft", name: "draft", widget: "boolean", default: false}
+          - {label: "Therapy Intro", name: "therapy_intro", widget: "text"}
+          - label: "Conditions"
+            name: "conditions"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Therapies"
+            name: "therapies"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+  # Contact Page
+  - name: "contact"
+    label: "Contact Page"
+    files:
+      - name: "contact"
+        label: "Contact"
+        file: "content/contact/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Type", name: "type", widget: "string", default: "contact"}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Draft", name: "draft", widget: "boolean", default: false}
+          - {label: "Contact Intro", name: "contact_intro", widget: "text"}
+          - label: "Trading Hours"
+            name: "trading_hours"
+            widget: "list"
+            fields:
+              - {label: "Day", name: "day", widget: "string"}
+              - {label: "Hours", name: "hours", widget: "string"}
+          - {label: "Address Line 1", name: "address_line1", widget: "string"}
+          - {label: "Address Line 2", name: "address_line2", widget: "string"}
+          - {label: "Address Line 3", name: "address_line3", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Form Intro", name: "form_intro", widget: "text"}
+
+  # FAQs Page
+  - name: "faqs"
+    label: "FAQs Page"
+    files:
+      - name: "faqs"
+        label: "FAQs"
+        file: "content/faqs/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Type", name: "type", widget: "string", default: "FAQS"}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Draft", name: "draft", widget: "boolean", default: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+  # Site Configuration
+  - name: "config"
+    label: "Site Configuration"
+    files:
+      - name: "hugo_config"
+        label: "Hugo Config"
+        file: "config.toml"
+        fields:
+          - {label: "Base URL", name: "baseURL", widget: "string"}
+          - {label: "Language Code", name: "languageCode", widget: "string"}
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Theme", name: "theme", widget: "string"}
+
+# Editor configuration for preview
+show_preview_links: true
+local_backend: false
