@@ -1,0 +1,53 @@
+/* Two coloumn layout */ 
+
+.two-column-container {
+    display: flex;
+    align-items: flex-start; /* Align columns to the top */
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .text-column {
+    flex: 1 1 50%; /* Take up 50% of the width, grow and shrink */
+    padding-right: 20px; /* Add space between columns */
+  }
+  
+  .image-column {
+    flex: 1 1 50%; /* Take up 50% of the width, grow and shrink */
+    text-align: center; /* Center the image */
+  }
+  
+  .image-column img {
+    max-width: 100%; /* Make the image responsive */
+    height: auto;
+  }
+
+  h4 {
+    border-top-style: solid;
+    border-top-color: #19154b;
+    border-top-width: 1px;
+    max-width: 340px;
+    padding-top: 30px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .text-column,
+    .image-column {
+      flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+      flex: 1 1 100%; /* Take up full width on mobile */
+      padding-right: 0; /* Remove padding on mobile */
+    }
+  
+    .text-column {
+      order: 2; /* Place text below image on mobile */
+    }
+  
+    .image-column {
+      order: 1; /* Place image above text on mobile */
+      margin-bottom: 20px; /* Add space between image and text */
+    }
+  }
+  
+  

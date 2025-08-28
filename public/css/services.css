@@ -1,0 +1,43 @@
+.therapy-services {
+    padding: 40px 0;
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  
+    .intro {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+  
+    .condition-list, .therapy-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 40px;
+
+    }
+  
+    .condition-item, .therapy-item {
+      background-color: #19154b;
+      color: white;
+      width: 300px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-align: center;
+      align-content: center;
+      justify-content: space-between;
+  
+      .plus-icon {
+        margin-left: 10px;
+        color: white; 
+      }
+    }
+  
+    .therapy-item.and-more {
+      background-color: #25c3f3; 
+      color: white;
+    }
+  }

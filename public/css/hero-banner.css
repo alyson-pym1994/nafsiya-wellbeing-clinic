@@ -1,0 +1,60 @@
+.hero-banner {
+  background-image: url('../img/hero-banner-1920x600.png'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  color: #333; /* Dark text color */
+  text-align: left; /* Align text to the left */
+  padding: 100px 20px; /* Adjust padding as needed */
+  position: relative; /* For positioning the button */
+}
+
+.hero-content {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.hero-banner h1 {
+  font-size: 3em; /* Adjust font size as needed */
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #21215c;
+}
+
+.hero-banner p {
+  font-size: 1.75em; /* Adjust font size as needed */
+  margin-bottom: 30px;
+  color: #21215c;
+}
+
+.hero-banner .btn {
+  background-color: #21215c; 
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block; /* Make it a block-level element */
+  transition: background-color 0.3s ease;
+}
+
+.hero-banner .btn:hover {
+  background-color: #31b0d5; /* Darker blue on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 80px 20px; /* Reduce padding on smaller screens */
+    text-align: center; /* Center text on mobile */
+  }
+
+  .hero-banner h1 {
+    font-size: 2.5em; /* Reduce font size on smaller screens */
+  }
+
+  .hero-banner p {
+    font-size: 1em; /* Reduce font size on smaller screens */
+  }
+}

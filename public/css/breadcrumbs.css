@@ -1,0 +1,38 @@
+#heading-breadcrumbs {
+    background: url('../img/Breadcrumbs-Color-Fill.png') center center repeat;
+    padding: 120px 0; /* Adjust padding as needed */
+    margin-bottom: 40px;
+  }
+  
+  #heading-breadcrumbs .container {
+    max-width: 1200px; /* Adjust as needed */
+    height: auto;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; /* Ensure text is above shapes */
+    z-index: 1; /* Ensure text is above shapes */
+  }
+  
+  #heading-breadcrumbs h1 {
+    font-size: 3.5em; /* Adjust font size as needed */
+    font-weight: bold; /* Bold font weight */
+    color: #282c69; /* Dark blue text color */
+    margin: 0; /* Remove default margin */
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+  }
+  
+  /* Mobile Responsiveness (optional) */
+  @media (max-width: 768px) {
+    #heading-breadcrumbs {
+      padding: 30px 0; /* Reduce padding on smaller screens */
+    }
+  
+    #heading-breadcrumbs h1 {
+      font-size: 2.5em; /* Reduce font size on smaller screens */
+    }
+  
+    #heading-breadcrumbs::before,
+    #heading-breadcrumbs::after {
+      display: none; /* Hide shapes on mobile */
+    }
+  }
