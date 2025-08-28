@@ -1,0 +1,67 @@
+<section class="therapy-services">
+    <div class="container">
+      <h2><div class="intro">
+        {{ .Page.Params.therapy_intro | markdownify }}
+      </div></h2>
+  
+      <div class="conditions">
+        <p>We specialize in addressing a range of conditions and issues, including but not limited to:</p>
+        <div class="condition-list">
+          {{ range .Page.Params.conditions }}
+          {{ $modalId := printf "modal-%s" (.name | urlize) }}
+          <div class="condition-item" data-modal-id="{{ $modalId }}" style="cursor: pointer;">
+            {{ .name }} <span class="plus-icon">+</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+  
+      <!-- Condition Modals -->
+      {{ range .Page.Params.conditions }}
+      {{ $modalId := printf "modal-%s" (.name | urlize) }}
+      <div id="{{ $modalId }}" class="modal">
+        <div class="modal-content">
+          <span class="close-button" data-modal-id="{{ $modalId }}">&times;</span>
+          <h2>{{ .name }}</h2>
+          {{ if .description }}
+          <div class="modal-description">
+            {{ .description | markdownify }}
+          </div>
+          {{ else }}
+          <p>Our experienced team provides specialized support and treatment for {{ .name | lower }}. We use evidence-based approaches to help you manage symptoms and improve your quality of life.</p>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+  
+      <div class="therapies">
+        <h2>We incorporate a variety of evidence-based therapies to ensure our clients receive the highest quality care.</h2>
+        <div class="therapy-list">
+          {{ range .Page.Params.therapies }}
+          {{ $modalId := printf "modal-therapy-%s" (.name | urlize) }}
+          <div class="therapy-item" data-modal-id="{{ $modalId }}" style="cursor: pointer;">
+            {{ .name }} <span class="plus-icon">+</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Therapy Modals -->
+      {{ range .Page.Params.therapies }}
+      {{ $modalId := printf "modal-therapy-%s" (.name | urlize) }}
+      <div id="{{ $modalId }}" class="modal">
+        <div class="modal-content">
+          <span class="close-button" data-modal-id="{{ $modalId }}">&times;</span>
+          <h2>{{ .name }}</h2>
+          {{ if .description }}
+          <div class="modal-description">
+            {{ .description | markdownify }}
+          </div>
+          {{ else }}
+          <p>Our experienced team provides specialized support and treatment using {{ .name | lower }}. We use evidence-based approaches to help you achieve your therapeutic goals.</p>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>

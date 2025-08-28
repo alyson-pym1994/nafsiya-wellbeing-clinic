@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  <head>
+    <script src="/static/js/front.js"></script>
+
+    {{ partial "headers.html" . }}
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        {{ partial "top.html" . }}
+
+        {{ partial "nav.html" . }}
+
+        {{ partial "breadcrumbs.html" . }}
+
+
+        <div class="error-page" id="error-page"> 
+          <a href="/" class="error-button">RETURN HOME </a>
+      </div>
+
+                </div>
+                <!-- /.col-sm-6 -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+  </body>
+</html>

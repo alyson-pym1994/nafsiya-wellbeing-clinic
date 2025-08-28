@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    {{ partial "headers.html" . }}
+    <link href="{{ "css/buttons.css" | relURL }}" rel="stylesheet">
+    <link href="{{ "css/modal.css" | relURL }}" rel="stylesheet">
+    <script src="{{ "js/front.js" | relURL }}"></script>
+</head>
+
+<body>
+    <div id="all">
+        {{ partial "top.html" . }}
+        {{ partial "nav.html" . }}
+        {{ partial "breadcrumbs.html" . }}
+        {{ partial "services.html" . }}
+        {{ partial "footer.html" . }}
+    </div>
+
+    {{ partial "scripts.html" . }}
+    <script src="{{ "js/modal.js" | relURL }}"></script>
+    <script>
+        console.log('Modal script loaded');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+            const conditionItems = document.querySelectorAll('.condition-item');
+            const therapyItems = document.querySelectorAll('.therapy-item');
+            console.log('Found condition items:', conditionItems.length);
+            console.log('Found therapy items:', therapyItems.length);
+        });
+    </script>
+</body>
+
+</html>

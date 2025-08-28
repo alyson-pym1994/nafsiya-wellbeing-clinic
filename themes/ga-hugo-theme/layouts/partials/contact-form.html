@@ -1,0 +1,64 @@
+<section class="contact-us">
+    <div class="container">
+      <h2><div class="intro">
+        {{ .Page.Params.contact_intro | markdownify }}
+      </div></h2>
+  
+      <div class="contact-details">
+        <div class="trading-hours">
+          <h3>TRADING HOURS</h3>
+          {{ range .Page.Params.trading_hours }}
+          <p><strong>{{ .day }}</strong> {{ .hours }}</p>
+          {{ end }}
+        </div>
+  
+        <div class="address">
+          <h3>ADDRESS</h3>
+          <p><strong>{{ .Page.Params.address_line1 }}</strong></p>
+          <p>{{ .Page.Params.address_line2 }}</p>
+          <p>{{ .Page.Params.address_line3 }}</p>
+        </div>
+  
+        <div class="phone-email">
+          <h3>PHONE OR EMAIL</h3>
+          <p>{{ .Page.Params.phone }}</p>
+          <p>{{ .Page.Params.email }}</p>
+        </div>
+      </div>
+  
+      <div class="form-intro">
+        {{ .Page.Params.form_intro | markdownify }}
+      </div>
+  
+      <form class="contact-form" action="https://formspree.io/f/xkgjbzae" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+  
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </section>

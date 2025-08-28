@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title_plain := .Title | markdownify | plainify }}
+<title>{{ $title_plain }}</title>
+{{ $keywords := .Site.Params.defaultKeywords | default (slice "" | first 0) }}
+{{ if isset .Params "tags" }}{{ range .Params.tags }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }}
+{{ if isset .Params "keywords" }}{{ range .Params.keywords }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }}
+{{ if gt (len $keywords) 0 }}
+<meta name="keywords" content="{{ delimit (uniq $keywords) ", " }}">
+{{ end }}
+{{ $description_plain := default .Site.Params.defaultDescription .Description | markdownify | plainify }}
+<meta name="description" content="{{ $description_plain }}">
+
+{{ hugo.Generator }}
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap and Font Awesome CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+<!-- CSS animations  -->
+<link href="{{ "css/animate.css" | relURL }}" rel="stylesheet">
+
+<!-- Theme stylesheet  -->
+<link href="{{ "css/main.css" | relURL }}" rel="stylesheet" id="theme-stylesheet">
+
+
+<!-- Favicon and Apple touch icons-->
+<link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{{ "img/apple-touch-icon.png" | relURL }}" />
+
+<!--For Android and Chrome use these sizes-->
+<link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">  
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192x192.png">

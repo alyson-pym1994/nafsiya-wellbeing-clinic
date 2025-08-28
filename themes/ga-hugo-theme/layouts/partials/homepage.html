@@ -1,0 +1,29 @@
+<section class="homepage">
+    <div class="container">
+      <div class="intro-heading">
+        {{ .Page.Params.homepage_intro_heading | markdownify }}
+      </div>
+      <div class="intro">
+        {{ .Page.Params.homepage_intro | markdownify }}
+      </div>
+  
+      <div class="homepage-boxes">
+        <div class="homepage-box box-left">
+          <div class="box-content">
+           <h3>{{ .Page.Params.left_box_heading | markdownify }}</h3> 
+
+            {{ .Page.Params.left_box_text | markdownify }}
+            <a href="{{ .Page.Params.left_box_button_link }}" class="button left-button">{{ .Page.Params.left_box_button_text }}</a>
+          </div>
+        </div>
+  
+        <div class="homepage-box box-right">
+          <div class="box-content">
+            <h3>{{ .Page.Params.right_box_heading | markdownify }}</h3>
+            {{ .Page.Params.right_box_text | markdownify }}
+            <a href="{{ .Page.Params.right_box_button_link }}" class="button right-button">{{ .Page.Params.right_box_button_text }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
